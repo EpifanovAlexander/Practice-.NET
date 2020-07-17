@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<WorkWithASP.Models.RewardsModel>
+
+@{
+    ViewData["Title"] = "Rewards Index";
+}
+
+<h1>All Rewards</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reward in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => reward.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => reward.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = reward.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = reward.Id }) |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
