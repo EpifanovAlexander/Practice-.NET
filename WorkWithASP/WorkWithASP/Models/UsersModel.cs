@@ -16,5 +16,7 @@ namespace WorkWithASP.Models
         public DateTime Birthdate { get; set; }
 
         public List<RewardsModel> Rewards { get; set; }
+
+        public string StringBirthdate { get; set; }
     }
 }

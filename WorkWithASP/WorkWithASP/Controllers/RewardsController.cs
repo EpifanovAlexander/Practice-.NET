@@ -11,12 +11,12 @@ namespace WorkWithASP.Controllers
     {
         private static List<RewardsModel> rewardsList = new List<RewardsModel>
         {
-            new RewardsModel{Id=1,Title="Кубок Туссента",Description="Получен в Туссенте"},
-            new RewardsModel{Id=2,Title="Орден из Боклера",Description="Вы убили бестию. Но какой ценой?.."},
-            new RewardsModel{Id=3,Title="Кубок по гвинту",Description="Достойная награда!"},
-            new RewardsModel{Id=4,Title="Корона Фольтеста",Description="Надеюсь, вы рады этой награде"},
-            new RewardsModel{Id=5,Title="Орден школы Змеи",Description="Вы единственный, кто получил эту награду"},
-            new RewardsModel{Id=6,Title="Медаль за отвагу",Description="Поздравляем!"},
+            new RewardsModel{Id=0,Title="Кубок Туссента",Description="Получен в Туссенте"},
+            new RewardsModel{Id=1,Title="Орден из Боклера",Description="Вы убили бестию. Но какой ценой?.."},
+            new RewardsModel{Id=2,Title="Кубок по гвинту",Description="Достойная награда!"},
+            new RewardsModel{Id=3,Title="Корона Фольтеста",Description="Надеюсь, вы рады этой награде"},
+            new RewardsModel{Id=4,Title="Орден школы Змеи",Description="Вы единственный, кто получил эту награду"},
+            new RewardsModel{Id=5,Title="Медаль за отвагу",Description="Поздравляем!"},
         };
         public IActionResult Index()
         {

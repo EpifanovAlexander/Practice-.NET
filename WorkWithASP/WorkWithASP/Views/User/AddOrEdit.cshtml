@@ -27,22 +27,16 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
-                    <select asp-for="Rewards" class="form-control">
-                        <option>Кубок Туссента</option>
-                        <option>Орден из Боклера</option>
-                        <option>Кубок по гвинту</option>
-                        <option>Корона Фольтеста</option>
-                        <option>Орден школы Змеи</option>
+                    <label asp-for="Rewards" class="control-label" style="color: gray">(just choose rewards)</label>
+                    <select multiple asp-for="Rewards" class="form-control" name="addedRewards">
+                        <option value="0">Кубок Туссента</option>
+                        <option value="1">Орден из Боклера</option>
+                        <option value="2">Кубок по гвинту</option>
+                        <option value="3">Корона Фольтеста</option>
+                        <option value="4">Орден школы Змеи</option>
+                        <option value="5">Медаль за отвагу</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <input type="submit" value="Select Reward" class="btn btn-primary" />
-                </div>
-
-                <label asp-for="Rewards" class="control-label">User Rewards</label>
-                <select asp-for="Rewards" class="form-control">
-                </select>
 
                 <div class="form-group">
                     <input type="submit" value="Add User" class="btn btn-primary" />
@@ -76,29 +70,30 @@ else
                 </div>
                 <div class="form-group">
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
-                    <select asp-for="Rewards" class="form-control">
-                        <option>Кубок Туссента</option>
-                        <option>Орден из Боклера</option>
-                        <option>Кубок по гвинту</option>
-                        <option>Корона Фольтеста</option>
-                        <option>Орден школы Змеи</option>
+                    <label asp-for="Rewards" class="control-label" style="color: gray">(just choose rewards)</label>
+                    <select multiple asp-for="Rewards" class="form-control" name="editedRewards">
+                        <option value="0">Кубок Туссента</option>
+                        <option value="1">Орден из Боклера</option>
+                        <option value="2">Кубок по гвинту</option>
+                        <option value="3">Корона Фольтеста</option>
+                        <option value="4">Орден школы Змеи</option>
+                        <option value="5">Медаль за отвагу</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <input name="action" type="submit" value="Select Reward" class="btn btn-primary" />
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Rewards" class="control-label">User Rewards</label>
-                    <select asp-for="Rewards" class="form-control">
-
-                        @if (Model.Rewards != null)
-                            @foreach (var reward in Model.Rewards)
-                            {
-                                <option> @reward.Title </option>
-                            }
-                    </select>
+                    <div class="btn-group dropright">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            View User Rewards
+                        </button>
+                        <div asp-for="Rewards" class="dropdown-menu">
+                            @if (Model.Rewards != null)
+                                @foreach (var reward in Model.Rewards)
+                                {
+                                    <a class="dropdown-item"> @reward.Title </a>
+                                }
+                        </div>
+                    </div>
                 </div>
 
 
