@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Work with ASP.Net\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj": {}
+    "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj": {}
   },
   "projects": {
-    "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Work with ASP.Net\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj": {
+    "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Work with ASP.Net\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
+        "projectUniqueName": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
         "projectName": "WorkWithASP",
-        "projectPath": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Work with ASP.Net\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
+        "projectPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
         "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-        "outputPath": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Work with ASP.Net\\WorkWithASP\\WorkWithASP\\obj\\",
+        "outputPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",

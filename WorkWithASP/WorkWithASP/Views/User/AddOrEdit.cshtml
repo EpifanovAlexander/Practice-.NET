@@ -89,18 +89,21 @@ else
                     <input name="action" type="submit" value="Select Reward" class="btn btn-primary" />
                 </div>
 
-                <label asp-for="Rewards" class="control-label">User Rewards</label>
-                <select asp-for="Rewards" class="form-control">
+                <div class="form-group">
+                    <label asp-for="Rewards" class="control-label">User Rewards</label>
+                    <select asp-for="Rewards" class="form-control">
 
-                    @if (Model.Rewards != null)
-                        @foreach (var reward in Model.Rewards)
-                        {
-                            <option> @reward.Title </option>
-                        }
-                </select>
+                        @if (Model.Rewards != null)
+                            @foreach (var reward in Model.Rewards)
+                            {
+                                <option> @reward.Title </option>
+                            }
+                    </select>
+                </div>
+
 
                 <div class="form-group">
-                   <input name="action" type="submit" value="Edit User" class="btn btn-primary" />
+                    <input name="action" type="submit" value="Edit User" class="btn btn-primary" />
                 </div>
             </form>
         </div>

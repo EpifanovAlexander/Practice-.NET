@@ -41,3 +41,46 @@ D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практ�
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Work with ASP.Net\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\AddOrEdit.cshtml.g.cs
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Work with ASP.Net\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\Index.cshtml.g.cs
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Work with ASP.Net\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\Delete.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.exe
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.deps.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.runtimeconfig.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.runtimeconfig.dev.json
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.Views.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\WorkWithASP.Views.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.csprojAssemblyReference.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.AssemblyInfoInputs.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.AssemblyInfo.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.csproj.CoreCompileInputs.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.MvcApplicationPartsAssemblyInfo.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.RazorAssemblyInfo.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.RazorAssemblyInfo.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.TagHelpers.input.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.TagHelpers.output.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.RazorCoreGenerate.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\AddOrEdit.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\Delete.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Rewards\Index.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\User\AddOrEdit.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\User\Delete.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.RazorTargetAssemblyInfo.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.RazorTargetAssemblyInfo.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.Views.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\staticwebassets\WorkWithASP.StaticWebAssets.Manifest.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\staticwebassets\WorkWithASP.StaticWebAssets.xml
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.genruntimeconfig.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.csproj.CopyComplete
