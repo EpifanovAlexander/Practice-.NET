@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WorkWithASP.Models;
+using WorkWithASP.Services;
 
 namespace WorkWithASP.Controllers
 {
     public class RewardsController : Controller
     {
-        private static List<RewardsModel> rewardsList = new List<RewardsModel>
+		private 
+			IStorage usersAndRewardsStorage;
+		public RewardsController(IStorage storage)
+		{
+			usersAndRewardsStorage = storage;
+		}
+
+		public IActionResult Index()
         {
-            new RewardsModel{Id=0,Title="Кубок Туссента",Description="Получен в Туссенте"},
-            new RewardsModel{Id=1,Title="Орден из Боклера",Description="Вы убили бестию. Но какой ценой?.."},
-            new RewardsModel{Id=2,Title="Кубок по гвинту",Description="Достойная награда!"},
-            new RewardsModel{Id=3,Title="Корона Фольтеста",Description="Надеюсь, вы рады этой награде"},
-            new RewardsModel{Id=4,Title="Орден школы Змеи",Description="Вы единственный, кто получил эту награду"},
-            new RewardsModel{Id=5,Title="Медаль за отвагу",Description="Поздравляем!"},
-        };
-        public IActionResult Index()
-        {
-            return View(rewardsList);
+            return View(usersAndRewardsStorage.GetRewardsList());
         }
 
 		[HttpGet]
@@ -32,8 +28,7 @@ namespace WorkWithASP.Controllers
 		[HttpPost]
 		public IActionResult Add(RewardsModel reward)
 		{
-			reward.Id = rewardsList.Max(m => m.Id) + 1;
-			rewardsList.Add(reward);
+			usersAndRewardsStorage.AddReward(reward);
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -41,14 +36,14 @@ namespace WorkWithASP.Controllers
 		[HttpGet]
 		public IActionResult Edit(int? id)
 		{
-			RewardsModel rewardEdit = rewardsList.FirstOrDefault(td => td.Id == id.Value);
+			RewardsModel rewardEdit = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value);
 			return View("AddOrEdit", rewardEdit);
 		}
 
 		[HttpPost]
 		public IActionResult Edit(RewardsModel reward)
 		{
-			rewardsList[reward.Id - 1] = reward;
+			usersAndRewardsStorage.UpdateReward(reward);
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -59,7 +54,7 @@ namespace WorkWithASP.Controllers
 			if (!id.HasValue)
 				return RedirectToAction(nameof(Index));
 
-			RewardsModel rewardRemove = rewardsList.FirstOrDefault(td => td.Id == id.Value);
+			RewardsModel rewardRemove = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value);
 
 			if (rewardRemove == null)
 				return NotFound();
@@ -70,12 +65,10 @@ namespace WorkWithASP.Controllers
 		[HttpPost]
 		public IActionResult Delete(int id)
 		{
-			RewardsModel rewardRemove = rewardsList.FirstOrDefault(td => td.Id == id);
-
-			if (rewardRemove == null)
+			if (!usersAndRewardsStorage.RemoveRewardById(id))
+			{
 				return NotFound();
-
-			rewardsList.Remove(rewardRemove);
+			}
 
 			return RedirectToAction(nameof(Index));
 		}

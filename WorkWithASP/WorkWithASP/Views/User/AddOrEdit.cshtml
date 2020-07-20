@@ -3,6 +3,11 @@
 *@
 
 @model WorkWithASP.Models.UsersModel
+@using WorkWithASP.Services;
+@{ 
+    InMemoryStorage memoryStorage = new InMemoryStorage();
+}
+
 
 @if (Model == null)
 {
@@ -28,14 +33,25 @@
                 <div class="form-group">
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
                     <label asp-for="Rewards" class="control-label" style="color: gray">(just choose rewards)</label>
-                    <select multiple asp-for="Rewards" class="form-control" name="addedRewards">
-                        <option value="0">Кубок Туссента</option>
-                        <option value="1">Орден из Боклера</option>
-                        <option value="2">Кубок по гвинту</option>
-                        <option value="3">Корона Фольтеста</option>
-                        <option value="4">Орден школы Змеи</option>
-                        <option value="5">Медаль за отвагу</option>
-                    </select>
+
+                    <div class="form-group" style="overflow-y: scroll; height: 150px">
+                        <table class="table table-hover table-bordered" asp-for="Rewards">
+                            <tbody>
+                                @foreach (RewardsModel reward in memoryStorage.GetRewardsList())
+                                {
+                                    <tr>
+                                        <td>
+                                            <span>@Html.DisplayFor(modelItem => reward.Title)</span>
+                                        </td>
+                                        <td>
+                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[reward.Id])</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
 
                 <div class="form-group">
@@ -71,14 +87,24 @@ else
                 <div class="form-group">
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
                     <label asp-for="Rewards" class="control-label" style="color: gray">(just choose rewards)</label>
-                    <select multiple asp-for="Rewards" class="form-control" name="editedRewards">
-                        <option value="0">Кубок Туссента</option>
-                        <option value="1">Орден из Боклера</option>
-                        <option value="2">Кубок по гвинту</option>
-                        <option value="3">Корона Фольтеста</option>
-                        <option value="4">Орден школы Змеи</option>
-                        <option value="5">Медаль за отвагу</option>
-                    </select>
+
+                    <div class="form-group" style="overflow-y: scroll; height: 150px">
+                        <table class="table table-hover table-bordered" asp-for="Rewards">
+                            <tbody>
+                                @foreach (RewardsModel reward in memoryStorage.GetRewardsList())
+                                {
+                                    <tr>
+                                        <td>
+                                            <span>@Html.DisplayFor(modelItem => reward.Title)</span>
+                                        </td>
+                                        <td>
+                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[reward.Id])</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <div class="form-group">

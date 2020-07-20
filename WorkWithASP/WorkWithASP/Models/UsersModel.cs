@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace WorkWithASP.Models
@@ -17,6 +15,13 @@ namespace WorkWithASP.Models
 
         public List<RewardsModel> Rewards { get; set; }
 
-        public string StringBirthdate { get; set; }
+        public List<bool> RewardsIsCheck { get; set; }
+
+        public UsersModel()
+        {
+            Rewards = new List<RewardsModel>();
+            RewardsIsCheck = new List<bool>();
+        }
+
     }
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
+      "projectUniqueName": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Задание 4\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
       "projectName": "WorkWithASP",
-      "projectPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
+      "projectPath": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Задание 4\\WorkWithASP\\WorkWithASP\\WorkWithASP.csproj",
       "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
-      "outputPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\WorkWithASP\\obj\\",
+      "outputPath": "D:\\Мои вещи\\Схрон\\Учёба\\3 курс\\6 семестр\\Практика\\Задание 4\\WorkWithASP\\WorkWithASP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",

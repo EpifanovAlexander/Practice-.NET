@@ -1,56 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using WorkWithASP.Models;
+using WorkWithASP.Services;
 
 namespace WorkWithASP.Controllers
 {
     public class UserController : Controller
     {
-		private static List<RewardsModel> geraltRewards = new List<RewardsModel>
-		{
-			new RewardsModel{Id=0,Title="Кубок Туссента",Description="Получен в Туссенте"},
-			new RewardsModel{Id=1,Title="Орден из Боклера",Description="Вы убили бестию. Но какой ценой?.."},
-			new RewardsModel{Id=2,Title="Кубок по гвинту",Description="Достойная награда!"},
-		};
+		private IStorage usersAndRewardsStorage;
 
-		private static List<RewardsModel> letoRewards = new List<RewardsModel>
+		public UserController(IStorage storage)
 		{
-			new RewardsModel{Id=3,Title="Корона Фольтеста",Description="Надеюсь, вы рады этой награде"},
-			new RewardsModel{Id=4,Title="Орден школы Змеи",Description="Вы единственный, кто получил эту награду"},
-		};
-
-		private static List<RewardsModel> vilgefortzRewards = new List<RewardsModel>
-		{
-			new RewardsModel{Id=5,Title="Медаль за отвагу",Description="Поздравляем!"},
-		};
-
-		private static List<UsersModel> usersList = new List<UsersModel>
-		{
-			new UsersModel{Id = 0, Name = "Геральт из Ривии", Rewards = geraltRewards, Birthdate = new DateTime(1962, 3, 1)},
-			new UsersModel{Id = 1, Name = "Лето из Гулеты", Rewards = letoRewards, Birthdate = new DateTime(1953, 8, 4)},
-			new UsersModel{Id = 2, Name = "Вильгефорц из Роггевеена", Rewards = vilgefortzRewards, Birthdate = new DateTime(1978, 12, 11)},
-		};
-
-		private static List<RewardsModel> rewardsList = new List<RewardsModel>
-		{
-			new RewardsModel{Id=0,Title="Кубок Туссента",Description="Получен в Туссенте"},
-			new RewardsModel{Id=1,Title="Орден из Боклера",Description="Вы убили бестию. Но какой ценой?.."},
-			new RewardsModel{Id=2,Title="Кубок по гвинту",Description="Достойная награда!"},
-			new RewardsModel{Id=3,Title="Корона Фольтеста",Description="Надеюсь, вы рады этой награде"},
-			new RewardsModel{Id=4,Title="Орден школы Змеи",Description="Вы единственный, кто получил эту награду"},
-			new RewardsModel{Id=5,Title="Медаль за отвагу",Description="Поздравляем!"},
-		};
+			usersAndRewardsStorage = storage;
+		}
 
 		public IActionResult Index()
 		{
-			foreach (UsersModel user in usersList)
-			{
-				user.StringBirthdate = user.Birthdate.ToString("d");
-			}
-			return View(usersList);
+			return View(usersAndRewardsStorage.GetUsersList());
 		}
 
 		[HttpGet]
@@ -60,10 +26,10 @@ namespace WorkWithASP.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Add(UsersModel user, int[] addedRewards)
+		public IActionResult Add(UsersModel user)
 		{
-			user.Id = usersList.Max(m => m.Id) + 1;
-			usersList.Add(PresentRewards(user, addedRewards));
+			usersAndRewardsStorage.AddUser(user);
+			usersAndRewardsStorage.RewardUser(user.Id);
 			return RedirectToAction(nameof(Index));
         }
 
@@ -71,14 +37,16 @@ namespace WorkWithASP.Controllers
 		[HttpGet]
 		public IActionResult Edit(int? id)
 		{
-			UsersModel userEdit = usersList.FirstOrDefault(td => td.Id == id.Value);
+			UsersModel userEdit = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value);
+			userEdit = usersAndRewardsStorage.ExpandUserRewardsList(userEdit);
 			return View("AddOrEdit",userEdit);
 		}
 
 		[HttpPost]
-		public IActionResult Edit(UsersModel user, int[] editedRewards)
+		public IActionResult Edit(UsersModel user)
 		{
-			usersList[user.Id] = PresentRewards(user, editedRewards);
+			usersAndRewardsStorage.UpdateUser(user);
+			usersAndRewardsStorage.RewardUser(user.Id);
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -89,35 +57,23 @@ namespace WorkWithASP.Controllers
 			if (!id.HasValue)
 				return RedirectToAction(nameof(Index));
 
-			UsersModel userRemove = usersList.FirstOrDefault(td => td.Id == id.Value);
-
-			if (userRemove == null)
+			UsersModel userRemove = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value);
+			if (userRemove is null)
+            {
 				return NotFound();
-
+			}
 			return View(userRemove);
 		}
 
 		[HttpPost]
 		public IActionResult Delete(int id)
 		{
-			UsersModel userRemove = usersList.FirstOrDefault(td => td.Id == id);
-
-			if (userRemove == null)
+			if (!usersAndRewardsStorage.RemoveUserById(id))
+			{
 				return NotFound();
-
-			usersList.Remove(userRemove);
+			}
 
 			return RedirectToAction(nameof(Index));
 		}
-
-		public UsersModel PresentRewards (UsersModel user, int[] indexesRewards)
-        {
-			user.Rewards = new List<RewardsModel>();
-			foreach (int index in indexesRewards)
-            {
-				user.Rewards.Add(rewardsList[index]);
-            }
-			return user;
-        }
 	}
 }

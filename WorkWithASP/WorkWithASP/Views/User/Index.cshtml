@@ -32,7 +32,7 @@
                 @Html.DisplayFor(modelItem => user.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => user.StringBirthdate)
+                @user.Birthdate.ToString("d")
             </td>
             <td>
                 @if (user.Rewards != null)
