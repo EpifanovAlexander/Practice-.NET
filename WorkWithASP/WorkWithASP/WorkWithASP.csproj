@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UsersAndRewards.Common\UsersAndRewards.Common.csproj" />
+    <ProjectReference Include="..\UsersAndRewards.DBStorage\UsersAndRewards.DBStorage.csproj" />
+    <ProjectReference Include="..\UsersAndRewards.MemoryStorage\UsersAndRewards.MemoryStorage.csproj" />
+  </ItemGroup>
+
 </Project>

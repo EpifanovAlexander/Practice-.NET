@@ -1,0 +1,122 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.DBStorage\\UsersAndRewards.DBStorage.csproj": {}
+  },
+  "projects": {
+    "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\UsersAndRewards.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\UsersAndRewards.Common.csproj",
+        "projectName": "UsersAndRewards.Common",
+        "projectPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\UsersAndRewards.Common.csproj",
+        "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.DBStorage\\UsersAndRewards.DBStorage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.DBStorage\\UsersAndRewards.DBStorage.csproj",
+        "projectName": "UsersAndRewards.DBStorage",
+        "projectPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.DBStorage\\UsersAndRewards.DBStorage.csproj",
+        "packagesPath": "C:\\Users\\alexl\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.DBStorage\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\alexl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\UsersAndRewards.Common.csproj": {
+                "projectPath": "D:\\Repositories\\PracticeDotNET\\WorkWithASP\\UsersAndRewards.Common\\UsersAndRewards.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

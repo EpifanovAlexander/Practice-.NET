@@ -1,14 +1,15 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using WorkWithASP.Models;
-using WorkWithASP.Services;
+using UsersAndRewards.Common;
+using System.Collections.Generic;
 
 namespace WorkWithASP.Controllers
 {
     public class RewardsController : Controller
     {
-		private 
-			IStorage usersAndRewardsStorage;
+		private IStorage usersAndRewardsStorage;
+
 		public RewardsController(IStorage storage)
 		{
 			usersAndRewardsStorage = storage;
@@ -16,7 +17,7 @@ namespace WorkWithASP.Controllers
 
 		public IActionResult Index()
         {
-            return View(usersAndRewardsStorage.GetRewardsList());
+			return View(usersAndRewardsStorage.GetRewardsList().Select(reward => reward.ConvertRewardToViewModel()));
         }
 
 		[HttpGet]
@@ -26,9 +27,9 @@ namespace WorkWithASP.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Add(RewardsModel reward)
+		public IActionResult Add(RewardsViewModel reward)
 		{
-			usersAndRewardsStorage.AddReward(reward);
+			usersAndRewardsStorage.AddReward(reward.ConvertRewardToDomainModel());
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -36,14 +37,14 @@ namespace WorkWithASP.Controllers
 		[HttpGet]
 		public IActionResult Edit(int? id)
 		{
-			RewardsModel rewardEdit = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value);
+			RewardsViewModel rewardEdit = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value).ConvertRewardToViewModel();
 			return View("AddOrEdit", rewardEdit);
 		}
 
 		[HttpPost]
-		public IActionResult Edit(RewardsModel reward)
+		public IActionResult Edit(RewardsViewModel reward)
 		{
-			usersAndRewardsStorage.UpdateReward(reward);
+			usersAndRewardsStorage.UpdateReward(reward.ConvertRewardToDomainModel());
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -54,7 +55,7 @@ namespace WorkWithASP.Controllers
 			if (!id.HasValue)
 				return RedirectToAction(nameof(Index));
 
-			RewardsModel rewardRemove = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value);
+			RewardsViewModel rewardRemove = usersAndRewardsStorage.GetRewardsList().FirstOrDefault(td => td.Id == id.Value).ConvertRewardToViewModel();
 
 			if (rewardRemove == null)
 				return NotFound();

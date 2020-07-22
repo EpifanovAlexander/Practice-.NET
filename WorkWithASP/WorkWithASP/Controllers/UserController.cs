@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using UsersAndRewards.Common;
+using UsersAndRewards.Common.Models;
 using WorkWithASP.Models;
-using WorkWithASP.Services;
 
 namespace WorkWithASP.Controllers
 {
@@ -16,7 +19,7 @@ namespace WorkWithASP.Controllers
 
 		public IActionResult Index()
 		{
-			return View(usersAndRewardsStorage.GetUsersList());
+			return View(usersAndRewardsStorage.GetUsersList().Select(user => user.ConvertUserToViewModel()));
 		}
 
 		[HttpGet]
@@ -26,10 +29,11 @@ namespace WorkWithASP.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Add(UsersModel user)
+		public IActionResult Add(UsersViewModel user)
 		{
-			usersAndRewardsStorage.AddUser(user);
-			usersAndRewardsStorage.RewardUser(user.Id);
+			UsersModel newDomaiUser = user.ConvertUserToDomainModel();
+			newDomaiUser.Id = usersAndRewardsStorage.AddUser(newDomaiUser);
+			usersAndRewardsStorage.RewardUser(newDomaiUser);
 			return RedirectToAction(nameof(Index));
         }
 
@@ -37,16 +41,18 @@ namespace WorkWithASP.Controllers
 		[HttpGet]
 		public IActionResult Edit(int? id)
 		{
-			UsersModel userEdit = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value);
-			userEdit = usersAndRewardsStorage.ExpandUserRewardsList(userEdit);
+			UsersViewModel userEdit = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value).ConvertUserToViewModel();
+			userEdit = usersAndRewardsStorage.ExpandUserRewardsList(userEdit.ConvertUserToDomainModel()).ConvertUserToViewModel();
+			userEdit.DateTimeBirthdate = Convert.ToDateTime(userEdit.Birthdate);
 			return View("AddOrEdit",userEdit);
 		}
 
 		[HttpPost]
-		public IActionResult Edit(UsersModel user)
+		public IActionResult Edit(UsersViewModel user)
 		{
-			usersAndRewardsStorage.UpdateUser(user);
-			usersAndRewardsStorage.RewardUser(user.Id);
+			user.Birthdate = user.DateTimeBirthdate.ToString("D");
+			usersAndRewardsStorage.UpdateUser(user.ConvertUserToDomainModel());
+			usersAndRewardsStorage.RewardUser(user.ConvertUserToDomainModel());
 			return RedirectToAction(nameof(Index));
 		}
 
@@ -57,7 +63,7 @@ namespace WorkWithASP.Controllers
 			if (!id.HasValue)
 				return RedirectToAction(nameof(Index));
 
-			UsersModel userRemove = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value);
+			UsersViewModel userRemove = usersAndRewardsStorage.GetUsersList().FirstOrDefault(td => td.Id == id.Value).ConvertUserToViewModel();
 			if (userRemove is null)
             {
 				return NotFound();

@@ -1,0 +1,13 @@
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\bin\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.deps.json
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\bin\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\bin\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.csprojAssemblyReference.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.AssemblyInfoInputs.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.AssemblyInfo.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.csproj.CopyComplete
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.csproj.ResolveComReference.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.MemoryStorage\obj\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.csproj.CoreCompileInputs.cache

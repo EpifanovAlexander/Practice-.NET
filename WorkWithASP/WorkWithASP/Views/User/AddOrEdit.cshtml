@@ -2,16 +2,21 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-@model WorkWithASP.Models.UsersModel
-@using WorkWithASP.Services;
-@{ 
-    InMemoryStorage memoryStorage = new InMemoryStorage();
+@model WorkWithASP.Models.UsersViewModel
+
+@using UsersAndRewards.DBStorage;
+@using UsersAndRewards.MemoryStorage;
+@using UsersAndRewards.Common.Models;
+@{
+    MemoryStorage memoryStorage = new MemoryStorage();
+    DBStorage dbStorage = new DBStorage("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DBStorage;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+    List<RewardsModel> rewards = (List<RewardsModel>)dbStorage.GetRewardsList();
 }
 
 
 @if (Model == null)
 {
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Add User";
     <h1>Add User</h1>
     <hr />
 
@@ -34,17 +39,17 @@
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
                     <label asp-for="Rewards" class="control-label" style="color: gray">(just choose rewards)</label>
 
-                    <div class="form-group" style="overflow-y: scroll; height: 150px">
+                    <div class="form-group" style="overflow-y: auto; height: 150px">
                         <table class="table table-hover table-bordered" asp-for="Rewards">
                             <tbody>
-                                @foreach (RewardsModel reward in memoryStorage.GetRewardsList())
+                                @foreach (var reward in rewards)
                                 {
                                     <tr>
                                         <td>
                                             <span>@Html.DisplayFor(modelItem => reward.Title)</span>
                                         </td>
                                         <td>
-                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[reward.Id])</span>
+                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[rewards.IndexOf(rewards.FirstOrDefault(_reward => _reward.Id == reward.Id))])</span>
                                         </td>
                                     </tr>
                                 }
@@ -66,7 +71,7 @@
 
 else
 {
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit User";
     <h1>Edit User</h1>
 
     <div class="row">
@@ -81,8 +86,8 @@ else
                 </div>
                 <div class="form-group">
                     <label asp-for="Birthdate" class="control-label"></label>
-                    <input type="date" asp-for="Birthdate" class="form-control" />
-                    <span asp-validation-for="Birthdate" class="text-danger"></span>
+                    <input type="date" asp-for="DateTimeBirthdate" class="form-control" />
+                    <span asp-validation-for="DateTimeBirthdate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Rewards" class="control-label">All Rewards</label>
@@ -91,14 +96,15 @@ else
                     <div class="form-group" style="overflow-y: scroll; height: 150px">
                         <table class="table table-hover table-bordered" asp-for="Rewards">
                             <tbody>
-                                @foreach (RewardsModel reward in memoryStorage.GetRewardsList())
+                                @foreach (var reward in rewards)
                                 {
                                     <tr>
                                         <td>
                                             <span>@Html.DisplayFor(modelItem => reward.Title)</span>
                                         </td>
                                         <td>
-                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[reward.Id])</span>
+                                            <span>@Html.CheckBoxFor(m => m.RewardsIsCheck[rewards.IndexOf(rewards.FirstOrDefault(_reward => _reward.Id == reward.Id))])</span>
+                                            @*<span>@Html.CheckBoxFor(m => m.RewardsIsCheck[reward.Id])</span>*@
                                         </td>
                                     </tr>
                                 }

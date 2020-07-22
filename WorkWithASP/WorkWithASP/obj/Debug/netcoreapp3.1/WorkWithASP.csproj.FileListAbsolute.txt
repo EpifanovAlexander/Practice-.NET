@@ -127,3 +127,15 @@ D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практ�
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Задание 4\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.pdb
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Задание 4\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.genruntimeconfig.cache
 D:\Мои вещи\Схрон\Учёба\3 курс\6 семестр\Практика\Задание 4\WorkWithASP\WorkWithASP\obj\Debug\netcoreapp3.1\WorkWithASP.csproj.CopyComplete
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.MemoryStorage.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.DBStorage.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\WorkWithASP\bin\Debug\netcoreapp3.1\UsersAndRewards.DBStorage.pdb

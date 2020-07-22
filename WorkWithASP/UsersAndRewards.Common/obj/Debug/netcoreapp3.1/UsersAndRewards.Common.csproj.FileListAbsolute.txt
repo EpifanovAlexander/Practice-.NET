@@ -1,0 +1,9 @@
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.deps.json
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\bin\Debug\netcoreapp3.1\UsersAndRewards.Common.pdb
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.csprojAssemblyReference.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.AssemblyInfoInputs.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.AssemblyInfo.cs
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.csproj.CoreCompileInputs.cache
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.dll
+D:\Repositories\PracticeDotNET\WorkWithASP\UsersAndRewards.Common\obj\Debug\netcoreapp3.1\UsersAndRewards.Common.pdb

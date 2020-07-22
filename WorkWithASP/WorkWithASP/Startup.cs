@@ -3,7 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WorkWithASP.Services;
+using UsersAndRewards.Common;
+using UsersAndRewards.DBStorage;
+using UsersAndRewards.MemoryStorage;
+using WorkWithASP.Extensions;
 
 namespace WorkWithASP
 {
@@ -20,7 +23,8 @@ namespace WorkWithASP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddSingleton<IStorage>(new InMemoryStorage());
+            ///services.AddMemoryStorage();
+            services.AddSingleton<IStorage>(new DBStorage(Configuration.GetConnectionString("UsersAndRewardsDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +53,11 @@ namespace WorkWithASP
                     name: "default",
                     pattern: "{controller=User}/{action=Index}/{id?}");
             });
+        }
+
+        public static void AddMemoryStorage(IServiceCollection services)
+        {
+            services.AddSingleton<IStorage>(new MemoryStorage());
         }
     }
 }
