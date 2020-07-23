@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAndRewards.Common", "U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAndRewards.MemoryStorage", "UsersAndRewards.MemoryStorage\UsersAndRewards.MemoryStorage.csproj", "{0D4FBA90-3674-4B6D-8AFF-04C64FB0989E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersAndRewards.DBStorage", "UsersAndRewards.DBStorage\UsersAndRewards.DBStorage.csproj", "{7A5AF76A-D1A7-4BEB-BD91-09164AC2BA4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsersAndRewards.DBStorage", "UsersAndRewards.DBStorage\UsersAndRewards.DBStorage.csproj", "{7A5AF76A-D1A7-4BEB-BD91-09164AC2BA4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4A94952F-89B9-481F-A976-0D92881927AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersAndRewards.Tests", "UsersAndRewards.Tests\UsersAndRewards.Tests.csproj", "{C5932F98-BE2A-4915-89B8-65439AEBC2AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{7A5AF76A-D1A7-4BEB-BD91-09164AC2BA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A5AF76A-D1A7-4BEB-BD91-09164AC2BA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A5AF76A-D1A7-4BEB-BD91-09164AC2BA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5932F98-BE2A-4915-89B8-65439AEBC2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5932F98-BE2A-4915-89B8-65439AEBC2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5932F98-BE2A-4915-89B8-65439AEBC2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5932F98-BE2A-4915-89B8-65439AEBC2AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5932F98-BE2A-4915-89B8-65439AEBC2AA} = {4A94952F-89B9-481F-A976-0D92881927AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67486752-F971-4049-908F-2836B30D9E98}

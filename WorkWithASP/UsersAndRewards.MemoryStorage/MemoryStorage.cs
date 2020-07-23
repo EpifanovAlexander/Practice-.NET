@@ -42,8 +42,9 @@ namespace UsersAndRewards.MemoryStorage
 		}
 
 
+        #region Methods IStorage 
 
-		public IEnumerable<RewardsModel> GetRewardsList()
+        public IEnumerable<RewardsModel> GetRewardsList()
 		{
 			return storageRewards;
 		}
@@ -75,6 +76,11 @@ namespace UsersAndRewards.MemoryStorage
 		{
 			RewardsModel removedReward = ReturnRewardById(id);
 
+			if (removedReward is null)
+            {
+				return false;
+            }
+
 			foreach (UsersModel user in storageUsers)
 			{
 				RemoveReward(user.Id, id);
@@ -86,7 +92,14 @@ namespace UsersAndRewards.MemoryStorage
 
 		public bool RemoveUserById(int id)
 		{
-			return storageUsers.Remove(ReturnUserById(id));
+			UsersModel removedUser = ReturnUserById(id);
+
+            if (removedUser is null)
+            {
+				return false;
+            }
+
+            return storageUsers.Remove(removedUser);
 		}
 
 
@@ -118,16 +131,16 @@ namespace UsersAndRewards.MemoryStorage
 		public IEnumerable<RewardsModel> GetRewardsByUserId(int id)
 		{
 			UsersModel user = ReturnUserById(id);
-			if (user is null)
-			{
-				return new List<RewardsModel>();
-			}
-			return user.Rewards;
+			//if (user is null)
+			//{
+			//	return new List<RewardsModel>();
+			//}
+			return user.Rewards ?? throw new ArgumentNullException("User is null");
 		}
 
 		public bool RewardUser(UsersModel user)
 		{
-			UsersModel userInStorage = ReturnUserById(user.Id);
+			UsersModel userInStorage = ReturnUserById(user.Id) ?? throw new ArgumentNullException("User is null");
 			if (userInStorage is null)
 			{
 				return false;
@@ -144,8 +157,8 @@ namespace UsersAndRewards.MemoryStorage
 
 		public bool RemoveReward(int userId, int rewardId)
 		{
-			RewardsModel rewardRemoved = ReturnRewardById(rewardId);
-			UsersModel userRemoved = ReturnUserById(userId);
+			RewardsModel rewardRemoved = ReturnRewardById(rewardId) ?? throw new ArgumentNullException("Reward is null");
+			UsersModel userRemoved = ReturnUserById(userId) ?? throw new ArgumentNullException("User is null");
 			return userRemoved.Rewards.Remove(rewardRemoved);
 		}
 
@@ -158,8 +171,9 @@ namespace UsersAndRewards.MemoryStorage
 			}
 			return user;
 		}
+        #endregion
 
-		public UsersModel ReturnUserById(int id)
+        public UsersModel ReturnUserById(int id)
 		{
 			return storageUsers.FirstOrDefault(user => user.Id == id);
 		}
